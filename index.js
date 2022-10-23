@@ -144,7 +144,7 @@ function genContent(){
       <h1 class="display-4">Employee Information</h1>
     </div>
 </div>
-<main class='row'>
+<main class='row justify-content-center '>
 `)
 
 for(i = 0; i <employeeData.length;i++){
@@ -163,9 +163,9 @@ for(i = 0; i <employeeData.length;i++){
     othertemp = 'Github: '+employeeData[i].getGithub()
   }
 contentFinal.push(`
-<div class="card" style="width: 18rem;">
+<div class="card m-2" style="width: 18rem; box-shadow: 5px 5px 5px rgb(112, 112, 112)">
   <div class="card-body">
-    <h2 class='card-title bg-secondary text-white'>${nameTemp}</h2>
+    <h2 class='card-title bg-secondary text-white text-center'>${nameTemp}</h2>
     <h3 class="card-subtitle mb-2 text-muted">Role: ${roleTemp}</h3>
     <h3 class="card-subtitle mb-2 text-muted">ID: ${idTemp}</h3>
     <h3 class="card-subtitle mb-2 text-muted">${othertemp}</h3>
