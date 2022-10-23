@@ -137,6 +137,12 @@ function genContent(){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Employee webpage</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous">
+    
   </head>
   <body>
   <div class="jumbotron jumbotron-fluid bg-info">
@@ -153,22 +159,26 @@ for(i = 0; i <employeeData.length;i++){
   let nameTemp = employeeData[i].getName()
   let emailTemp = employeeData[i].getEmail()
   let othertemp
+  let icon
   if(roleTemp == 'Manager'){
+    icon = 'fa-clipboard'
     othertemp = 'Office: '+employeeData[i].officeNumber
   }
   if(roleTemp == 'Intern'){
+    icon = 'fa-paperclip'
     othertemp = 'School: '+employeeData[i].getSchool()
   }
   if(roleTemp == 'Engineer'){
+    icon = 'fa-chart-pie'
     othertemp = 'Github: '+employeeData[i].getGithub()
   }
 contentFinal.push(`
 <div class="card m-2" style="width: 18rem; box-shadow: 5px 5px 5px rgb(112, 112, 112)">
   <div class="card-body">
-    <h2 class='card-title bg-secondary text-white text-center'>${nameTemp}</h2>
-    <h3 class="card-subtitle mb-2 text-muted">Role: ${roleTemp}</h3>
-    <h3 class="card-subtitle mb-2 text-muted">ID: ${idTemp}</h3>
-    <h3 class="card-subtitle mb-2 text-muted">${othertemp}</h3>
+    <h2 class='card-title bg-secondary text-white text-center d-flex'>${nameTemp} <i class="fas ${icon}"></i></h2>
+    <h3 class="card-subtitle mb-2 text-muted d-flex">Role: ${roleTemp}</h3>
+    <h3 class="card-subtitle mb-2 text-muted d-flex">ID: ${idTemp}</h3>
+    <h3 class="card-subtitle mb-2 text-muted d-flex">${othertemp}</h3>
     <a href="mailto: ${emailTemp}" class="card-link">Email</a>
     </div>
 </div>
