@@ -190,9 +190,3 @@ fs.writeFile('./src/index.html',contentFinish ,function(err){
 }
 
 startLog()
-
-
-function sum(a, b) {
-    return a + b;
-  }
-  module.exports = sum;
