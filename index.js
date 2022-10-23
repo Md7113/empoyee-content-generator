@@ -139,7 +139,7 @@ function genContent(){
     <title>Employee webpage</title>
   </head>
   <body>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid bg-info">
     <div class="container">
       <h1 class="display-4">Employee Information</h1>
     </div>
@@ -157,15 +157,15 @@ for(i = 0; i <employeeData.length;i++){
     othertemp = 'Office: '+employeeData[i].officeNumber
   }
   if(roleTemp == 'Intern'){
-    othertemp = 'School: '+employeeData[i].getSchool
+    othertemp = 'School: '+employeeData[i].getSchool()
   }
   if(roleTemp == 'Engineer'){
-    othertemp = 'Github: '+employeeData[i].getGithub
+    othertemp = 'Github: '+employeeData[i].getGithub()
   }
 contentFinal.push(`
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h2 class='card-title'>${nameTemp}</h2>
+    <h2 class='card-title bg-secondary text-white'>${nameTemp}</h2>
     <h3 class="card-subtitle mb-2 text-muted">Role: ${roleTemp}</h3>
     <h3 class="card-subtitle mb-2 text-muted">ID: ${idTemp}</h3>
     <h3 class="card-subtitle mb-2 text-muted">${othertemp}</h3>
